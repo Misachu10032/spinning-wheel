@@ -3,19 +3,21 @@ import React, { useEffect, useState } from 'react';
 import { drawPizza } from './utils/drawWheel';
 import { spinPizzaAnimation, easeOut } from './utils/spin';
 import './App.css';
+import { randonDegree } from './utils/randomDegree';
 
 const App = () => {
   const [rotation, setRotation] = useState(0);
-  const [priceArray, setPriceArray] = useState(['湿哒哒','sadsad','sdadsa','asdsad',,'','dasjid','']);
+  const [priceArray, setPriceArray] = useState(['','','','','','','']);
 
   const spinDuration = 3000;
 
-  const spinPizza = (degrees) => {
+  const spinPizza = () => {
     setRotation(0);
+    const degrees= randonDegree(priceArray.length)
 
-    const canvas = document.getElementById('pizzaCanvas');
+   const canvas = document.getElementById('pizzaCanvas');
     const ctx = canvas.getContext('2d');
-
+    console.log(degrees)
     spinPizzaAnimation(degrees, spinDuration, (rotation) => drawPizza(ctx,rotation, priceArray));
   };
 
@@ -47,10 +49,9 @@ const App = () => {
   return (
     <div className="app">
       <canvas id="pizzaCanvas" width="500" height="500"></canvas>
-      <button onClick={() => spinPizza(720)}>Spin 720°</button>
+      <button onClick={() => spinPizza()}>Spin</button>
 
       <div>
-      <p>Array State Example:</p>
       <ul>
         {priceArray.map((item, index) => (
           <li key={index}>
