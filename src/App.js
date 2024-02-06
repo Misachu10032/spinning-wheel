@@ -6,7 +6,7 @@ import './App.css';
 
 const App = () => {
   const [rotation, setRotation] = useState(0);
-  const [priceArray, setPriceArray] = useState([]);
+  const [priceArray, setPriceArray] = useState(['湿哒哒','sadsad','sdadsa','asdsad',,'','dasjid','']);
 
   const spinDuration = 3000;
 
