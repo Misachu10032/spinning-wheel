@@ -17,7 +17,6 @@ const App = () => {
 
    const canvas = document.getElementById('pizzaCanvas');
     const ctx = canvas.getContext('2d');
-    console.log(degrees)
     spinPizzaAnimation(degrees, spinDuration, (rotation) => drawPizza(ctx,rotation, priceArray));
   };
 
