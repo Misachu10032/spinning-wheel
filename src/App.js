@@ -1,9 +1,10 @@
 // src/App.js
 import React, { useEffect, useState } from 'react';
 import { drawPizza } from './utils/drawWheel';
-import { spinPizzaAnimation, easeOut } from './utils/spin';
+import { spinPizzaAnimation } from './utils/spin';
 import './App.css';
 import { randonDegree } from './utils/randomDegree';
+import ArrowComponent from './component/Arrow';
 
 const App = () => {
   const [rotation, setRotation] = useState(0);
@@ -47,6 +48,7 @@ const App = () => {
   }, [rotation, priceArray]);
   return (
     <div className="app">
+      <ArrowComponent/>
       <canvas id="pizzaCanvas" width="500" height="500"></canvas>
       <button onClick={() => spinPizza()}>Spin</button>
 
