@@ -7,4 +7,4 @@ This is a spinning wheel.
 
 ## To Run
 npm run start
-go to http://localhost:3000/ on your browser
+go to http://localhost:2024/ on your browser
